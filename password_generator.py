@@ -9,9 +9,11 @@ def ask_int(prompt):
     while True:
         try:
             value = int(input(prompt))
-            if value >= 0: return value
+            if value >= 0:
+                return value
             print('Please enter a non-negative integer.')
-        except ValueError: print('Please enter a valid integer.')
+        except ValueError:
+            print('Please enter a valid integer.')
 
 def generate_password(n_letters, n_symbols, n_numbers):
     chars = (
@@ -34,4 +36,5 @@ def main():
 
     print(f'Your password is: {generate_password(n_letters, n_symbols, n_numbers)}')
 
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    main()
