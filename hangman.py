@@ -67,7 +67,7 @@ r"""
 """,
 )
 
-def main():
+def main() -> None:
     chosen_word = random.choice(WORDS)
     remaining = set(chosen_word)
     guessed = set()

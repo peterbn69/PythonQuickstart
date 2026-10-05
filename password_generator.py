@@ -5,7 +5,7 @@ LETTERS = string.ascii_letters
 NUMBERS = string.digits
 SYMBOLS = '!#$%&()*+@'
 
-def ask_int(prompt):
+def ask_int(prompt: str) -> int:
     while True:
         try:
             value = int(input(prompt))
@@ -15,7 +15,7 @@ def ask_int(prompt):
         except ValueError:
             print('Please enter a valid integer.')
 
-def generate_password(n_letters, n_symbols, n_numbers):
+def generate_password(n_letters: int, n_symbols: int, n_numbers: int) -> str:
     chars = (
         [secrets.choice(LETTERS) for _ in range(n_letters)] +
         [secrets.choice(SYMBOLS) for _ in range(n_symbols)] +
@@ -24,7 +24,7 @@ def generate_password(n_letters, n_symbols, n_numbers):
     secrets.SystemRandom().shuffle(chars)
     return ''.join(chars)
 
-def main():
+def main() -> None:
     print('Welcome to the PyPassword Generator!')
     n_letters = ask_int('How many letters would you like in your password? ')
     n_symbols = ask_int('How many symbols would you like in your password? ')
